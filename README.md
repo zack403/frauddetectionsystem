@@ -33,13 +33,15 @@ The project is structured into multiple packages to maintain separation of conce
 1. Compile the Java files:
 
     ```bash
-    javac -cp ".:json-simple-1.1.1.jar" src/main/Main.java src/model/Transaction.java src/frauddetection/FraudDetector.java
+      javac -cp lib/json-simple-1.1.1.jar src/main/*.java src/model/*.java src/frauddetection/*.java
+      
     ```
 
 2. Run the Main class:
 
     ```bash
-    java -cp ".:json-simple-1.1.1.jar" main.Main
+    java -cp "src;lib/json-simple-1.1.1.jar" main.Main
+
     ```
 
 ## Test Dataset

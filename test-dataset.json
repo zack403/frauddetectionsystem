@@ -58,5 +58,48 @@
         "amount": 5000.00,
         "userID": "user3",
         "serviceID": "serviceC"
-    }
+    },
+    { 
+        "timestamp": 1617906600, 
+        "amount": 150.00, 
+        "userID": "user1", 
+        "serviceID": "serviceE" 
+    },
+    { 
+        "timestamp": 1617906660, 
+        "amount": 200.00, 
+        "userID": "user1", 
+        "serviceID": "serviceF"
+    },
+    { 
+        "timestamp": 1617906720, 
+        "amount": 250.00, 
+        "userID": "user1", 
+        "serviceID": "serviceG"
+    }, 
+    
+    { 
+        "timestamp": 1617906600, 
+        "amount": 300.00, 
+        "userID": "user1", 
+        "serviceID": "serviceA" 
+    }, 
+    { 
+        "timestamp": 1617906610, 
+        "amount": 400.00, 
+        "userID": "user2", 
+        "serviceID": "serviceB" 
+    }, 
+    { 
+        "timestamp": 1617906620, 
+        "amount": 500.00, 
+        "userID": "user1", 
+        "serviceID": "serviceA" 
+    },
+    { 
+        "timestamp": 1617906630, 
+        "amount": 600.00, 
+        "userID": "user2", 
+        "serviceID": "serviceB" 
+    }   
 ]

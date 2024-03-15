@@ -18,7 +18,17 @@ The project is structured into multiple packages to maintain separation of conce
 - The solution efficiently processes and analyzes the transaction stream without relying on external libraries designed specifically for anomaly detection.
 
 ## Out-of-Order Event Processing:
-- The solution handles out-of-order events by maintaining a map
+The solution efficiently handles a large volume of transactions and incorporates mechanisms for handling out-of-order events, considering network latencies in a distributed system. Here's how it addresses out-of-order event processing:
+
+- Event Buffering: The system maintains a priority queue to store incoming events temporarily before processing them. Events are ordered based on their timestamps.
+
+- Handling Out-of-Order Events: When an event is received, its timestamp is compared with the timestamp of the last processed event. If the event is older than the last processed event, it is ignored to handle out-of-order events.
+
+- Time Window Consideration: Events within the last 5 minutes are considered part of the current window. Buffered events that fall outside of this window are not processed immediately.
+
+- Reordering Mechanism: Buffered events are processed based on their timestamps. Events that are within the current time window are processed, ensuring that late-arriving events are processed correctly.
+
+- Maximum Delay Threshold: The system defines a maximum delay threshold for out-of-order events. Events that arrive later than this threshold are considered out-of-order and are handled accordingly.
 
 ## Fraud Detection Logic
 - The FraudDetector.java class implements logic to detect fraudulent patterns in the transaction data. It checks for patterns such as conducting transactions in multiple services within a short time frame, unusually high transaction amounts, and "ping-pong" activities between services. The system flags users involved in suspicious activities and generates alerts accordingly.
@@ -34,7 +44,7 @@ The project is structured into multiple packages to maintain separation of conce
 
     ```bash
       javac -cp lib/json-simple-1.1.1.jar src/main/*.java src/model/*.java src/frauddetection/*.java
-      
+
     ```
 
 2. Run the Main class:
